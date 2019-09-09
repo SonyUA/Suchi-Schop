@@ -14,6 +14,8 @@ function burger() {
 
 
 /* SLIDER */
+
+
 let btnRight = document.querySelector("#btn-right");
 let btnLeft = document.querySelector("#btn-left");
 let images = document.querySelectorAll("#slide-inner");
@@ -21,47 +23,44 @@ let current = 0;
 
 function slideShowleft() {
 
- if (current < images.length - 1) {
-  for (let i =0; i < images.length; i++) {
-    images[i].classList.remove("active");
-    images[i].classList.add("slide-inner");
-    
-  }
-  current++;
-  images[current].classList.remove("slide-inner");
-   images[current].classList.add("active");
-   
- }
- 
+  if (current < images.length - 1) {
 
-  else  if (current === images.length - 1) {
-      current = images.length - 1;
+    for (let i = 0; i < images.length; i++) {
+      images[i].classList.remove("active");
+      images[i].classList.add("slide-inner");
+
     }
+    current++;
+    images[current].classList.remove("slide-inner");
+    images[current].classList.add("active");
 
-};
+  }
+
+
+  else if (current === images.length - 1) {
+    current = images.length - 1;
+  }
+}
 
 function slideShowRight() {
 
- 
+  if (current > 0) {
 
-  if (current > 0){
-
-    for (let i =0; i < images.length; i++) {
+    for (let i = 0; i < images.length; i++) {
       images[i].classList.remove("active");
       images[i].classList.add("slide-inner");
-      
     }
+
     current--;
-  images[current].classList.remove("slide-inner");
-  images[current].classList.add("active");
-   
+    images[current].classList.remove("slide-inner");
+    images[current].classList.add("active");
+
   } else if (current === 0) {
-    
     current = 0;
   }
 }
 
 btnLeft.addEventListener('click', slideShowleft);
-btnRight.addEventListener('click',slideShowRight);
+btnRight.addEventListener('click', slideShowRight);
 
 
