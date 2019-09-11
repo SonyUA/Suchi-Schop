@@ -27,39 +27,40 @@
                     <li class="list-item menu-item"><a class="nav-link link-item5" href="">CONTACT</a></li>
                 </ul>
             </menu>
-            <nav>
+            <nav id="menuOne">
                 <ul class="navigation">
-                    <li class="list-item list-item1"><a class="nav-link link-item1" href="">BRUNCH</a></li>
+                    <li class="list-item list-item1"><a class="nav-link link-item1" href="#brunchOne">BRUNCH</a></li>
                     <li class="burger-list" id="burger" onclick="burger ()">
                         <a class="burger-icon-link" id="burger-icon-link">
                             <div class="burger-icon" id="burger-icon"></div>
                         </a>
                     </li>
-                    <li class="list-item list-item2"><a class="nav-link link-item2" href="">WELCOME</a></li>
-                    <li class="list-item list-item3"><a class="nav-link link-item3" href="">MENU</a></li>
-                    <li class="list-item list-item4"><a class="nav-link link-item4" href="">EVENTS</a></li>
-                    <li class="list-item list-item5"><a class="nav-link link-item5" href="">CONTACT</a></li>
+                    <li class="list-item list-item2"><a class="nav-link link-item2" href="#price">WELCOME</a></li>
+                    <li class="list-item list-item3"><a class="nav-link link-item3" href="#six">MENU</a></li>
+                    <li class="list-item list-item4"><a class="nav-link link-item4" href="#ten">EVENTS</a></li>
+                    <li class="list-item list-item5"><a class="nav-link link-item5" href="#footer">CONTACT</a></li>
                 </ul>
             </nav>
         </header>
 
         <!--SECTION ONE-->
 
-        <section class="section-one">
+        <section class="section-one" id="brunchOne">
             <div class="one-content-box">
                 <h1 class="one-title">Brunch</h1>
                 <h2 class="one-text">Full website</h2>
-                <a href="" class="one-link">READ MORE</a>
+                <a href="#form" class="one-link">READ MORE</a>
             </div>
         </section>
 
         <!--SECTION TWO-->
 
         <section class="section-two">
-            <div class="two-inner bounceIn">
+            <div class="two-inner">
                 <h3 class="two-title">Indian traditional flavours</h3>
                 <p class="two-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
             </div>
+
             <img class="two-img" src="./img/img1.png" alt="">
         </section>
 
@@ -111,7 +112,7 @@
 
         <!-- SECTION-PRICE -->
 
-        <section class="section-price-list">
+        <section class="section-price-list" id="price">
             <div class="price-list-inner">
                 <h2 class="price-list-title">India</h2>
                 <h3 class="price-list-subtitle">on your plate</h3>
@@ -185,7 +186,7 @@
             </div>
         </section>
         <!-- SECTION-SIX -->
-        <section class="section-six">
+        <section class="section-six" id="six">
             <div class="six-inner">
                 <h2 class="price-list-title">Discover</h2>
                 <h3 class="price-list-subtitle">our new menu</h3>
@@ -246,7 +247,7 @@
 
         <!-- SECTION-FORM -->
 
-        <section class="section-form">
+        <section class="section-form" id="form">
             <h2 class="price-list-title form-title">Book here</h2>
             <form action="" method="POST">
                 <div class="form-inner">
@@ -277,7 +278,7 @@
 
         <!--SECTION_TEN-->
 
-        <section class="section-ten">
+        <section class="section-ten" id="ten">
             <h2 class="price-list-title">Discover</h2>
             <h3 class="price-list-subtitle">our new menu</h3>
             <div class="ten-inner">
@@ -304,7 +305,7 @@
                 </div>
             </div>
         </section>
-        <footer class="section-footer">
+        <footer class="section-footer" id="footer">
             <p class="footer-text1">“</p>
             <p class="footer-text2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor<br> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
             <p class="footer-text3">Linda Steward</p>
@@ -319,6 +320,19 @@
         </footer>
     </div>
     <script src="./JS/main.js "></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#menuOne").on("click", "a", function(event) {
+                event.preventDefault();
+                var id = $(this).attr('href'),
+                    top = $(id).offset().top;
+                $('body,html').animate({
+                    scrollTop: top
+                }, 1500);
+            });
+        });
+    </script>
 </body>
 
 </html>
