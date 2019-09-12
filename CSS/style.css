@@ -813,7 +813,7 @@ input {
         width: 250px;
     }
     .two-img-box {
-        flex-basis: 80%;
+        flex-basis: 70%;
         width: 100%;
         margin-top: 40px;
     }
