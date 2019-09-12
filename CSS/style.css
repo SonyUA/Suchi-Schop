@@ -195,6 +195,7 @@ a {
 
 .two-img2 {
     transition: 0.8s;
+    width: 100%;
 }
 
 .two-title:hover,
